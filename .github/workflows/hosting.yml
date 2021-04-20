@@ -1,28 +1,33 @@
-# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-
-name: Node.js CI
+name: merge_master
 
 on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    push:
+        branches: [master]
 
 jobs:
-  build:
-
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [10.x, 12.x, 14.x, 15.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: npm ci
+    deploy:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [12.x]
+        env:
+            RW_PROJECT_ID: ${{ secrets.RW_PROJECT_ID }}
+            RW_API_KEY: ${{ secrets.RW_API_KEY }}
+            RW_AUTH_DOMAIN: ${{ secrets.RW_AUTH_DOMAIN }}
+            RW_DATABASE_URL: ${{ secrets.RW_DATABASE_URL }}
+            RW_STORAGE_BUCKET: ${{ secrets.RW_STORAGE_BUCKET }}
+            RW_MESSAGING_SENDER_ID: ${{ secrets.RW_MESSAGING_SENDER_ID }}
+            RW_APP_ID: ${{ secrets. RW_APP_ID }}
+            RW_MEASUREMENT_ID: ${{ secrets.RW_MEASUREMENT_ID }}
+        steps:
+            - uses: actions/checkout@v2
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+            - run: npm ci
+            - run: npm run environment
+            - run: npm install
+            - run: npm run build
+            - run: npm install -g firebase-tools
+            - run: firebase deploy --only hosting --token ${{ secrets.FIREBASE_TOKEN }}
