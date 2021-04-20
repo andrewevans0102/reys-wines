@@ -4,9 +4,13 @@
 
 This is the open source project for [wineswithreyrey.com](https://www.wineswithreyrey.com).
 
-It is a fun way to record (and share) wine that you like and try out in the world. Most of the functionality is pretty straightforward, but I'll be creating a YouTube video soon that showcases it and will link it here.
+It is a fun way to record (and share) wine that you like and try out in the world.
 
 You just create a free account on the site, and then you can store and share all your wine adventures. The entire site is secured with [Firebase Auth](https://firebase.google.com/docs/auth).
+
+I created a YouTube video that showcases the app at the following:
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/urC7mZpIRKA/0.jpg)](https://www.youtube.com/watch?v=urC7mZpIRKA)
 
 ## Features
 
