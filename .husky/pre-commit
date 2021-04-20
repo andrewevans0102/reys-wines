@@ -1,0 +1,7 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "file cleanup"
+git reset "functions/.env"
+git reset "src/environments"
+git reset ".firebaserc"

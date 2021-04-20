@@ -1,0 +1,41 @@
+<section class="edit">
+    <h1 class="title">Edit Wine</h1>
+    <article *ngIf="!saving">
+        <form [formGroup]="wineForm" (ngSubmit)="recordWine()">
+            <label>
+                <span class="edit__heading">Name</span>
+                <input formControlName="wineName" />
+            </label>
+            <label>
+                <span class="edit__heading">Location Purchased</span>
+                <input formControlName="locationPurchased" />
+            </label>
+            <app-stars (outputStars)="fillStars($event)"></app-stars>
+            <label>
+                <span class="edit__heading"> Notes</span>
+                <textarea
+                    matInput
+                    formControlName="notes"
+                    rows="10"
+                    cols="25"
+                ></textarea>
+            </label>
+
+            <div class="edit__file">
+                <input
+                    type="file"
+                    formControlName="winePicture"
+                    (change)="uploadFile($event)"
+                    accept="image/*"
+                    required
+                />
+            </div>
+            <div *ngIf="imagePath !== null">
+                <img src="{{ imagePath }}" class="edit__image" />
+            </div>
+            <button type="submit">Save Edit</button>
+        </form>
+    </article>
+    <app-progress [showPercent]="showPercent" *ngIf="saving"></app-progress>
+    <button (click)="back()">back</button>
+</section>

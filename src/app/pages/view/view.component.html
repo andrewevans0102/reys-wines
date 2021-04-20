@@ -1,0 +1,83 @@
+<section class="view" *ngIf="!sending">
+    <h1 class="title">Saved Wines</h1>
+    <label class="view__search">
+        <span>Search</span>
+        <input [(ngModel)]="wineName" (input)="searchName($event)" />
+    </label>
+    <div *ngFor="let w of wineSaved" class="view__wine">
+        <div (click)="show(w.id)" class="view__wine--record">
+            <div class="view__wine--record-name">
+                <div class="view__wine--record-name-presentation">
+                    <span class="view__wine--record-name-presentation-title">{{
+                        w.wineName
+                    }}</span>
+                    <span class="view__wine--record-name-presentation-date">{{
+                        w.recorded | date
+                    }}</span>
+                </div>
+                <span
+                    class="material-icons view__wine--record-name-arrow-down"
+                    *ngIf="!w.show"
+                >
+                    keyboard_arrow_down
+                </span>
+                <span
+                    class="material-icons view__wine--record-name-arrow-up"
+                    *ngIf="w.show"
+                >
+                    keyboard_arrow_up
+                </span>
+            </div>
+            <div *ngIf="w.show" class="view__wine--card">
+                <label>
+                    <div class="view__wine--card-heading">
+                        Location Purchased
+                    </div>
+                    <div class="view__wine--card-location">
+                        {{ w.locationPurchased }}
+                    </div>
+                </label>
+                <label>
+                    <div class="view__wine--card-heading">Rating</div>
+                    <div class="view__wine--card-rating">
+                        <span *ngIf="!w.stars[0]">☆</span>
+                        <span *ngIf="w.stars[0]">★</span>
+                        <span *ngIf="!w.stars[1]">☆</span>
+                        <span *ngIf="w.stars[1]">★</span>
+                        <span *ngIf="!w.stars[2]">☆</span>
+                        <span *ngIf="w.stars[2]">★</span>
+                        <span *ngIf="!w.stars[3]">☆</span>
+                        <span *ngIf="w.stars[3]">★</span>
+                        <span *ngIf="!w.stars[4]">☆</span>
+                        <span *ngIf="w.stars[4]">★</span>
+                    </div>
+                </label>
+                <label>
+                    <div class="view__wine--card-heading">Notes</div>
+                    <div class="view__wine--card-notes">{{ w.notes }}</div>
+                </label>
+
+                <div *ngIf="w.winePicture !== null">
+                    <img
+                        src="{{ w.winePicture | async }}"
+                        class="view__wine--picture"
+                    />
+                </div>
+                <button class="view__wine--card-edit" (click)="edit(w)">
+                    EDIT
+                </button>
+                <button class="view__wine--card-delete" (click)="delete(w)">
+                    DELETE
+                </button>
+                <button class="view__wine--card-share" (click)="share(w)">
+                    SHARE
+                </button>
+            </div>
+        </div>
+    </div>
+    <button (click)="back()">back</button>
+</section>
+<section *ngIf="sending" class="view__sending">
+    <h2>sending...</h2>
+    <mat-spinner></mat-spinner>
+</section>

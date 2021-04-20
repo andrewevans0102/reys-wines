@@ -1,0 +1,15 @@
+<label>
+    <span class="stars__heading">Rating</span>
+    <div class="stars__rating">
+        <span (click)="fillStars(0, false)" *ngIf="!stars[0]">☆</span>
+        <span (click)="fillStars(0, true)" *ngIf="stars[0]">★</span>
+        <span (click)="fillStars(1, false)" *ngIf="!stars[1]">☆</span>
+        <span (click)="fillStars(1, true)" *ngIf="stars[1]">★</span>
+        <span (click)="fillStars(2, false)" *ngIf="!stars[2]">☆</span>
+        <span (click)="fillStars(2, true)" *ngIf="stars[2]">★</span>
+        <span (click)="fillStars(3, false)" *ngIf="!stars[3]">☆</span>
+        <span (click)="fillStars(3, true)" *ngIf="stars[3]">★</span>
+        <span (click)="fillStars(4, false)" *ngIf="!stars[4]">☆</span>
+        <span (click)="fillStars(4, true)" *ngIf="stars[4]">★</span>
+    </div>
+</label>

@@ -1,0 +1,24 @@
+<h2 mat-dialog-title>{{ title }}</h2>
+<mat-dialog-content class="mat-typography">
+  <p>{{ data.message }}</p>
+  <!-- <mat-form-field> -->
+  <input
+    type="tel"
+    matInput
+    [formControl]="phoneFormControl"
+    placeholder="123-456-7890"
+  />
+  <p class="error" *ngIf="!phoneFormControl.valid">invalid phone</p>
+  <p *ngIf="phoneFormControl.valid" class="success">valid phone</p>
+  <!-- </mat-form-field> -->
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button
+    mat-button
+    [mat-dialog-close]="phoneFormControl.value"
+    [disabled]="!phoneFormControl.valid"
+  >
+    Send
+  </button>
+  <button mat-button [mat-dialog-close]>Cancel</button>
+</mat-dialog-actions>

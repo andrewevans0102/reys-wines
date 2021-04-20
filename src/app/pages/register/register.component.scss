@@ -1,0 +1,85 @@
+.register {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 375px;
+    text-align: center;
+    max-width: 375px;
+    margin-bottom: 50px;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        label {
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+            //   background-color: orange;
+            width: 320px;
+
+            input {
+                height: 20px;
+                padding: 10px;
+                font-size: 18px;
+            }
+        }
+    }
+
+    &__password {
+        display: flex;
+        align-items: center;
+        // width: 320px;
+        width: 320px;
+
+        input {
+            // ios update 14.3 has bug where input field of type password will freeze safari
+            // until a fix is pushed for this, taking in passwords in input type of text field
+            // here I am covering the input with a font
+            // it achieves the same result
+            // https://stackoverflow.com/questions/17769429/get-input-type-text-to-look-like-type-password
+            // https://webkit.org/
+            -webkit-text-security: disc;
+            width: 320px;
+            font-size: 18px;
+        }
+    }
+
+    &__heading {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        width: 100px;
+        padding-right: 10px;
+    }
+
+    &__submit {
+        margin-top: 40px;
+    }
+
+    &__note {
+        &--top {
+            color: yellow;
+            font-size: 15px;
+            margin: 10px;
+        }
+
+        &--bottom {
+            color: yellow;
+            font-size: 20px;
+            animation: blinker 4s linear infinite;
+        }
+    }
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}

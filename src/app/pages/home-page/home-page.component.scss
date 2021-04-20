@@ -1,0 +1,27 @@
+.home {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 375px;
+    max-width: 375px;
+    margin-bottom: 50px;
+
+    article {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin: 10px;
+    }
+
+    img {
+        // height: 211px;
+        // width: 281px;
+        border-radius: 50%;
+    }
+}
+
+section {
+    margin: 0 auto;
+}

@@ -1,0 +1,94 @@
+<section class="register">
+    <h1 class="title">Register User</h1>
+    <p class="register__note--top">
+        If your Safari session on iPhone freezes when creating your password,
+        please open this page in Chrome or another browser to register. The
+        issue seems to only happen when first registering and creating a
+        password.
+    </p>
+    <form [formGroup]="registerForm" (ngSubmit)="registerUser()">
+        <label>
+            <span class="register__heading">First Name:</span>
+            <input
+                placeholder="First Name"
+                formControlName="firstName"
+                id="firstName"
+                required
+            />
+        </label>
+
+        <label>
+            <span class="register__heading">Last Name:</span>
+            <input
+                placeholder="Last Name"
+                formControlName="lastName"
+                id="lastName"
+                required
+            />
+        </label>
+
+        <label>
+            <span class="register__heading">Email:</span>
+            <input
+                placeholder="Email"
+                formControlName="email"
+                id="inputEmail"
+                required
+            />
+        </label>
+
+        <!-- ios update 14.3 has bug where input field of type password will freeze safari
+    until a fix is pushed for this, taking in passwords in input type of text field-->
+        <!-- <label>
+      <span class="register__heading">Password:</span>
+      <div class="register__password">
+        <input
+          placeholder="Password"
+          [type]="hidePassword ? 'password' : 'text'"
+          formControlName="password"
+          id="password"
+          required
+        />
+        <i class="material-icons" (click)="hidePassword = !hidePassword">{{
+          hidePassword ? "visibility_off" : "visibility"
+        }}</i>
+      </div>
+    </label> -->
+        <label>
+            <span class="register__heading">Password:</span>
+            <div class="register__password">
+                <input
+                    placeholder="Password"
+                    type="text"
+                    formControlName="password"
+                    id="password"
+                    required
+                />
+            </div>
+        </label>
+        <div class="register__note--bottom">
+            (please fill in all fields to proceed)
+        </div>
+
+        <div
+            class="error"
+            *ngIf="
+                registerForm.controls['email'].value !== '' &&
+                registerForm.controls['email'].invalid
+            "
+        >
+            {{ getEmailErrorMessage() }}
+        </div>
+
+        <div class="register__submit">
+            <button
+                type="submit"
+                [disabled]="!registerForm.valid"
+                id="registerButton"
+            >
+                Register
+            </button>
+            <button type="button" (click)="cancel()">Cancel</button>
+        </div>
+    </form>
+</section>

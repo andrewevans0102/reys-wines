@@ -1,0 +1,83 @@
+<section class="login">
+  <h1 class="title">login User</h1>
+  <form [formGroup]="loginForm" (ngSubmit)="loginUser()" *ngIf="!processing">
+    <label>
+      <span class="login__heading">Email:</span>
+      <input
+        placeholder="Email"
+        formControlName="email"
+        id="inputEmail"
+        required
+      />
+    </label>
+
+    <!-- ios update 14.3 has bug where input field of type password will freeze safari
+    until a fix is pushed for this, taking in passwords in input type of text field-->
+    <!-- <label>
+      <span class="login__heading">Password:</span>
+      <div class="login__password">
+        <input
+          placeholder="Password"
+          [type]="hidePassword ? 'password' : 'text'"
+          formControlName="password"
+          id="password"
+          required
+        />
+        <i class="material-icons" (click)="hidePassword = !hidePassword">{{
+          hidePassword ? "visibility_off" : "visibility"
+        }}</i>
+      </div>
+    </label> -->
+    <label>
+      <span class="login__heading">Password:</span>
+      <div class="login__password">
+        <input
+          placeholder="Password"
+          formControlName="password"
+          id="password"
+          required
+        />
+      </div>
+    </label>
+
+    <div
+      class="error"
+      *ngIf="
+        loginForm.controls['email'].value !== '' &&
+        loginForm.controls['email'].invalid
+      "
+    >
+      {{ getEmailErrorMessage() }}
+    </div>
+    <!-- <label>
+      First Name:
+      <input
+        placeholder="First Name"
+        formControlName="firstName"
+        id="firstName"
+        required
+      />
+    </label>
+
+    <label>
+      Last Name:
+      <input
+        placeholder="Last Name"
+        formControlName="lastName"
+        id="lastName"
+        required
+      />
+    </label> -->
+
+    <div class="login__button">
+      <button type="submit" [disabled]="!loginForm.valid" id="loginButton">
+        Login
+      </button>
+      <button type="button" (click)="cancel()">Cancel</button>
+    </div>
+  </form>
+  <article *ngIf="processing" class="login__processing">
+    <h2>Logging you in...</h2>
+    <mat-spinner></mat-spinner>
+  </article>
+</section>

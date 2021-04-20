@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "RW_PROJECT_ID": {
+      "hosting": {
+        "reys-wines": [
+          "RW_PROJECT_ID"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "RW_PROJECT_ID"
+  }
+}

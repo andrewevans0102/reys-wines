@@ -1,0 +1,22 @@
+$title-font: 'Cormorant SC', serif;
+
+.stars {
+    &__heading {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        font-size: 18px;
+        margin: 10px;
+        font-family: $title-font;
+    }
+
+    &__rating > span {
+        display: inline-block;
+        position: relative;
+        width: 1.1em;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+}

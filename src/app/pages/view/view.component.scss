@@ -1,0 +1,153 @@
+$font-color: #e6d3c4;
+$title-font: 'Cormorant SC', serif;
+$body-font: 'EB Garamond', serif;
+$delete-color: #e84943;
+$edit-color: #000e00;
+
+.view {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 375px;
+    text-align: center;
+
+    &__sending {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__search {
+        font-size: 20px;
+        color: #e6d3c4;
+        font-family: $title-font;
+        font-weight: bold;
+
+        input {
+            margin: 10px;
+        }
+    }
+
+    &__wine {
+        width: 340px;
+
+        &--record {
+            background-color: #61595c;
+            color: $font-color;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 20px;
+
+            &-name {
+                display: flex;
+                align-items: center;
+
+                &-presentation {
+                    display: flex;
+                    flex-direction: column;
+                    width: 200px;
+
+                    &-title {
+                        font-size: 20px;
+                        color: #e6d3c4;
+                        font-family: $title-font;
+                        font-weight: bold;
+                    }
+
+                    &-date {
+                        font-size: 15px;
+                        font-family: $body-font;
+                    }
+                }
+
+                &-arrow-up {
+                    color: #e6d3c4;
+                    font-size: 40px;
+                    margin-left: 30px;
+                }
+
+                &-arrow-down {
+                    color: #e6d3c4;
+                    font-size: 40px;
+                    margin-left: 30px;
+                }
+            }
+        }
+
+        &--picture {
+            width: 280px;
+            height: auto;
+            //   margin: 20px;
+            margin-top: 20px;
+        }
+
+        &--card {
+            display: flex;
+            flex-direction: column;
+            text-align: right;
+            color: $font-color;
+            margin-top: 20px;
+            font-size: 20px;
+
+            label {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border: solid;
+                border-radius: 20px;
+                margin: 10px;
+            }
+
+            &-rating {
+                // padding: 10px;
+                padding-bottom: 10px;
+                width: 200px;
+                text-align: center;
+            }
+
+            &-heading {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 200px;
+                margin-right: 10px;
+                text-align: right;
+                margin-top: 10px;
+                font-family: $title-font;
+            }
+
+            &-location {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 200px;
+                font-family: $title-font;
+                margin: 10px;
+            }
+
+            &-notes {
+                font-family: $body-font;
+                font-size: 18px;
+                text-align: left;
+                padding: 10px;
+                width: 200px;
+            }
+
+            &-delete {
+                background-color: $delete-color;
+            }
+
+            &-edit {
+                background-color: $edit-color;
+                color: white;
+            }
+        }
+    }
+}
