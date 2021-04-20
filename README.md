@@ -36,7 +36,7 @@ You'll need a [Firebase Account](https://firebase.google.com/) to run this proje
 The Firebase variables you can find [by "adding an app" to Firebase](https://support.google.com/firebase/answer/9326094?hl=en). I wrote a small script that sets up the environment variables in this project. You can run this with `npm run environment`. Before you can run the environment script, you must first create the following in your `bash profile` or `zshrc file` similar to the following:
 
 ```bash
-export RW_PROJECT=<Firebase Project ID>
+export RW_PROJECT_ID=<Firebase Project ID>
 export RW_API_KEY=<Firebase Project API Key>
 export RW_AUTH_DOMAIN=<Firebase Auth Domain>
 export RW_DATABASE_URL=<Firebase Database URL>
