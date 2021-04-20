@@ -25,7 +25,7 @@ I've built some services that wrap the API calls, which can be found in the [src
 
 ## Angular PWA
 
-This project is an Angular PWA. I'm using a serviceworker with some minimal caching and detection of connections. If you'd like to learn more about how that works, check out [Getting STarted with Service Workers](https://angular.io/guide/service-worker-getting-started).
+This project is an Angular PWA. I'm using a serviceworker with some minimal caching and detection of connections. If you'd like to learn more about how that works, check out [Getting Started with Service Workers](https://angular.io/guide/service-worker-getting-started).
 
 ## Running Locally
 
