@@ -8,7 +8,7 @@ It is a fun way to record (and share) wine that you like and try out in the worl
 
 You just create a free account on the site, and then you can store and share all your wine adventures. The entire site is secured with [Firebase Auth](https://firebase.google.com/docs/auth).
 
-I created a YouTube video that showcases the app at the following:
+I created a YouTube video that showcases the app and its functionality at the following:
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/urC7mZpIRKA/0.jpg)](https://www.youtube.com/watch?v=urC7mZpIRKA)
 
