@@ -54,7 +54,7 @@ For Routing, I did some fun things with [angularfire](https://github.com/angular
 
 I also setup authentication with Firebase Auth in the Firebase Function that this project uses. Check out a sample implementation in the [Firebase Examples](https://github.com/firebase/functions-samples/blob/master/authorized-https-endpoint/functions/index.js).
 
-I also built the file storage and firestore rules such that all data queries are secured by UserID. You can learn more about that at [the firstore rules page](https://firebase.google.com/docs/firestore/security/rules-query).
+I also built the file storage and firestore rules such that all data queries are secured by UserID. You can learn more about that at [the firestore rules page](https://firebase.google.com/docs/firestore/security/rules-query).
 
 ## CICD Pipeline
 
