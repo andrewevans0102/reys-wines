@@ -28,6 +28,6 @@ jobs:
             - run: npm ci
             - run: npm run environment
             - run: npm install
-            - run: npm run build
+            - run: npm run build-prod
             - run: npm install -g firebase-tools
             - run: firebase deploy --only hosting --token ${{ secrets.FIREBASE_TOKEN }}
