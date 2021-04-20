@@ -52,8 +52,7 @@ Once you have those setup, run `npm run environment` to setup the values and the
 
 For Routing, I did some fun things with [angularfire](https://github.com/angular/angularfire) with routing. I created a few protected routes to ensure security. Check out [the angularfire page on protected routes](https://github.com/angular/angularfire/blob/master/docs/auth/router-guards.md).
 
-I also setup authentication with Firebase Auth in the Firebase Function that this project uses. Check out a sample implementation in the [Firebase Examples](// https://github.com/firebase/functions-samples/blob/master/authorized-https-endpoint/functions/index.js
-).
+I also setup authentication with Firebase Auth in the Firebase Function that this project uses. Check out a sample implementation in the [Firebase Examples](https://github.com/firebase/functions-samples/blob/master/authorized-https-endpoint/functions/index.js).
 
 I also built the file storage and firestore rules such that all data queries are secured by UserID. You can learn more about that at [the firstore rules page](https://firebase.google.com/docs/firestore/security/rules-query).
 
