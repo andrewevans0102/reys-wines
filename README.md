@@ -12,6 +12,8 @@ I created a YouTube video that showcases the app at the following:
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/urC7mZpIRKA/0.jpg)](https://www.youtube.com/watch?v=urC7mZpIRKA)
 
+I also created a blog post with some additional information on `Rhythmandbinary.com` at [Wines with ReyRey!](https://rhythmandbinary.com/post/2021-04-20-wines-with-reyrey).
+
 ## Features
 
 The project has the following features:
