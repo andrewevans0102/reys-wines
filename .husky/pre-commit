@@ -1,7 +1,7 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-echo "file cleanup"
-git reset "functions/.env"
+echo "file cleanup has started"
 git reset "src/environments"
 git reset ".firebaserc"
+echo "file cleanup has finished"
