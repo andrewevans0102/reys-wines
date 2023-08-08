@@ -2,13 +2,9 @@
 
 ![ReyRey](./src/assets/pages/home.jpg)
 
-This is the open source project for [wineswithreyrey.com](https://www.wineswithreyrey.com).
+This is the open source project for "Wines With ReyRey." A fun way to record and share your favorite wines.
 
-It is a fun way to record (and share) wine that you like and try out in the world.
-
-You just create a free account on the site, and then you can store and share all your wine adventures. The entire site is secured with [Firebase Auth](https://firebase.google.com/docs/auth).
-
-I created a YouTube video that showcases the app and its functionality at the following:
+I created a YouTube video that showcased how the app works at the following:
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/urC7mZpIRKA/0.jpg)](https://www.youtube.com/watch?v=urC7mZpIRKA)
 
@@ -62,19 +58,11 @@ I also setup authentication with Firebase Auth in the Firebase Function that thi
 
 I also built the file storage and firestore rules such that all data queries are secured by UserID. You can learn more about that at [the firestore rules page](https://firebase.google.com/docs/firestore/security/rules-query).
 
-## CICD Pipeline
-
-I'm using GitHub actions for this project's CICD. I'm only using that for the hosting portion of the app, the function that I've built I deploy locally.
-
 ## Husky
 
 I'm using [Husky](https://typicode.github.io/husky/#/) for precommit hooks. This is a great tool, and just wanted to share.
 
 ## Future Plans
 
-I plan to continue working on this project. If you're interested in contributing (or just want to follow my work), I'm planning to do the following:
+There are a lot of things you could do with this project. If you're interested in contributing, open a PR and let me know!
 
-1. build out unit tests with [Jest](https://jestjs.io/)
-2. build end to end (e2e) tests with [Cypress](https://www.cypress.io/)
-3. add tests to the CICD pipeline
-4. Add build notifications to the CICD pipeline
